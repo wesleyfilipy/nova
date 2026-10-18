@@ -10,6 +10,8 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://fast.wistia.com/player.js" async></script>
+  <script src="https://fast.wistia.com/embed/2j6fwytvtf.js" async type="module"></script>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -95,7 +97,11 @@
       box-shadow: var(--shadow);
       border: 6px solid var(--card);
     }
-    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video wistia-player { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .video wistia-player[media-id='2j6fwytvtf']:not(:defined) {
+      background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/2j6fwytvtf/swatch');
+      filter: blur(5px);
+    }
     .video-placeholder {
       position: absolute; inset: 0;
       display: grid; place-items: center; align-content: center; gap: 14px;
@@ -295,12 +301,7 @@
       <p class="lead">A guided audio routine that helps you swap money anxiety for focus, gratitude and confident daily decisions.</p>
 
       <div class="video">
-        <!-- Paste YOUR OWN video embed here (Panda, Vimeo, YouTube...) and delete the placeholder div:
-             <iframe src="https://YOUR-VIDEO-EMBED-URL" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
-        <div class="video-placeholder">
-          <div class="play"></div>
-          <span>Press play to watch</span>
-        </div>
+        <wistia-player media-id="2j6fwytvtf" aspect="1.7777777777777777" seo="false"></wistia-player>
       </div>
 
       <div class="offer">
