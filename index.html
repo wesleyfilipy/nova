@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morning Ritual Audio Program | Aurora Mindset</title>
+  <meta name="description" content="A guided 21-day audio program to build a calmer, more focused relationship with money.">
+  <meta property="og:title" content="Aurora Mindset — 21-Day Money Mindset Audio Program">
+  <meta property="og:description" content="Ten minutes a day of guided audio to build calmer, clearer money habits.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f1e9;
+      --bg-alt: #ece4d6;
+      --ink: #1d2b28;
+      --ink-soft: #4b5a56;
+      --brand: #1f4a40;
+      --brand-deep: #14332c;
+      --accent: #e0893a;
+      --accent-deep: #c26f23;
+      --card: #fffdf9;
+      --line: #dcd2c2;
+      --radius: 18px;
+      --shadow: 0 18px 40px -18px rgba(20, 51, 44, .35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; line-height: 1.15; color: var(--brand-deep); }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .wrap { width: min(1080px, 100% - 32px); margin-inline: auto; }
+    .narrow { width: min(760px, 100% - 32px); margin-inline: auto; }
+
+    /* ---------- Top bar ---------- */
+    .topbar {
+      background: var(--brand-deep);
+      color: #f3e9da;
+      font-size: 14px;
+      text-align: center;
+      padding: 10px 16px;
+      letter-spacing: .02em;
+    }
+    .topbar strong { color: var(--accent); }
+
+    header.site {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: "Fraunces", serif; font-weight: 700; font-size: 22px;
+      color: var(--brand-deep); text-decoration: none;
+    }
+    .logo-mark {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: radial-gradient(circle at 50% 70%, var(--accent) 0 38%, transparent 39%),
+                  linear-gradient(180deg, var(--brand) 0 55%, var(--accent-deep) 55%);
+    }
+    .header-link { font-size: 14px; font-weight: 600; color: var(--brand); text-decoration: none; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 28px 0 72px; text-align: center; }
+    .eyebrow {
+      display: inline-block;
+      background: #fbe4cd; color: var(--accent-deep);
+      font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+    }
+    .hero h1 { font-size: clamp(32px, 5.2vw, 56px); max-width: 860px; margin: 0 auto 16px; }
+    .hero h1 em { font-style: normal; color: var(--accent-deep); }
+    .hero p.lead { font-size: clamp(17px, 2vw, 20px); color: var(--ink-soft); max-width: 640px; margin: 0 auto 34px; }
+
+    .video {
+      position: relative;
+      max-width: 860px; margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%);
+      box-shadow: var(--shadow);
+      border: 6px solid var(--card);
+    }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-placeholder {
+      position: absolute; inset: 0;
+      display: grid; place-items: center; align-content: center; gap: 14px;
+      color: #f3e9da; font-weight: 500;
+    }
+    .play {
+      width: 84px; height: 84px; border-radius: 50%;
+      background: var(--accent);
+      display: grid; place-items: center;
+      box-shadow: 0 0 0 12px rgba(224, 137, 58, .25);
+    }
+    .play::after {
+      content: ""; margin-left: 6px;
+      border-left: 26px solid #fff; border-top: 16px solid transparent; border-bottom: 16px solid transparent;
+    }
+
+    /* ---------- Buttons / price ---------- */
+    .offer { margin-top: 38px; display: grid; justify-items: center; gap: 12px; }
+    .price { font-size: 15px; color: var(--ink-soft); }
+    .price s { opacity: .6; margin-right: 6px; }
+    .price b { font-family: "Fraunces", serif; font-size: 40px; color: var(--brand-deep); vertical-align: middle; }
+
+    .btn {
+      display: inline-flex; flex-direction: column; align-items: center;
+      background: var(--accent); color: #fff;
+      text-decoration: none; border: 0; cursor: pointer;
+      font: 700 20px/1.2 "Inter", sans-serif;
+      padding: 18px 42px; border-radius: 14px;
+      box-shadow: 0 6px 0 var(--accent-deep), 0 16px 30px -10px rgba(194, 111, 35, .6);
+      transition: transform .15s ease, box-shadow .15s ease;
+      width: min(460px, 100%);
+    }
+    .btn small { font-size: 13px; font-weight: 500; opacity: .9; margin-top: 4px; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--accent-deep); }
+
+    .trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; font-size: 13px; color: var(--ink-soft); }
+    .trust span::before { content: "✓ "; color: var(--brand); font-weight: 700; }
+
+    /* ---------- Benefits ---------- */
+    section.block { padding: 80px 0; }
+    .alt { background: var(--bg-alt); }
+    .section-title { text-align: center; font-size: clamp(28px, 3.8vw, 40px); margin-bottom: 14px; }
+    .section-sub { text-align: center; color: var(--ink-soft); max-width: 600px; margin: 0 auto 48px; }
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .feature {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px;
+    }
+    .feature .num {
+      font-family: "Fraunces", serif; font-size: 34px; color: var(--accent);
+      line-height: 1; margin-bottom: 12px;
+    }
+    .feature h3 { font-size: 21px; margin-bottom: 8px; }
+    .feature p { color: var(--ink-soft); font-size: 16px; }
+
+    /* ---------- Bonuses ---------- */
+    .bonus {
+      display: grid; grid-template-columns: 170px 1fr; gap: 32px; align-items: center;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px; margin-bottom: 22px;
+    }
+    .cover {
+      aspect-ratio: 3 / 4; border-radius: 6px 12px 12px 6px;
+      padding: 18px 14px; color: #fff;
+      display: flex; flex-direction: column; justify-content: space-between;
+      box-shadow: -6px 0 0 rgba(0,0,0,.18) inset, var(--shadow);
+      font-family: "Fraunces", serif;
+    }
+    .cover small { font-family: "Inter", sans-serif; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; opacity: .85; }
+    .cover strong { font-size: 20px; line-height: 1.15; }
+    .cover.c1 { background: linear-gradient(160deg, #2b6355, var(--brand-deep)); }
+    .cover.c2 { background: linear-gradient(160deg, #e9a25d, var(--accent-deep)); }
+    .cover.c3 { background: linear-gradient(160deg, #5c4a7a, #2f2545); }
+    .tag {
+      display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--brand); background: #d7e7e1; border-radius: 999px; padding: 4px 12px; margin-bottom: 10px;
+    }
+    .bonus h3 { font-size: 24px; margin-bottom: 8px; }
+    .bonus p { color: var(--ink-soft); }
+    .bonus .value { margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--accent-deep); }
+
+    /* ---------- Guarantee ---------- */
+    .guarantee {
+      display: grid; grid-template-columns: 180px 1fr; gap: 36px; align-items: center;
+      background: var(--brand-deep); color: #e8efe9;
+      border-radius: 26px; padding: 44px;
+    }
+    .guarantee h2 { color: #fff; font-size: clamp(26px, 3.2vw, 34px); margin-bottom: 10px; }
+    .seal {
+      width: 170px; height: 170px; border-radius: 50%;
+      background: var(--accent);
+      border: 6px dashed rgba(255,255,255,.55);
+      outline: 8px solid var(--accent);
+      display: grid; place-items: center; text-align: center;
+      color: #fff; font-weight: 700; line-height: 1.1;
+    }
+    .seal b { display: block; font-family: "Fraunces", serif; font-size: 52px; }
+    .seal span { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+
+    /* ---------- Author ---------- */
+    .author {
+      display: grid; grid-template-columns: 140px 1fr; gap: 28px; align-items: center;
+    }
+    .avatar {
+      width: 140px; height: 140px; border-radius: 50%;
+      background: linear-gradient(135deg, #f0c592, var(--accent-deep));
+      display: grid; place-items: center;
+      font-family: "Fraunces", serif; font-size: 48px; color: #fff;
+      border: 5px solid var(--card); box-shadow: var(--shadow);
+    }
+    .author h3 { font-size: 24px; margin-bottom: 6px; }
+    .author p { color: var(--ink-soft); }
+
+    /* ---------- FAQ ---------- */
+    details {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 14px; padding: 18px 22px; margin-bottom: 12px;
+    }
+    summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; color: var(--accent-deep); font-size: 22px; line-height: 1; }
+    details[open] summary::after { content: "–"; }
+    details p { margin-top: 10px; color: var(--ink-soft); font-size: 16px; }
+
+    .final { text-align: center; }
+    .final h2 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 12px; }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--brand-deep); color: #a9bcb5;
+      font-size: 13px; text-align: center; padding: 40px 16px;
+    }
+    footer nav { display: flex; justify-content: center; gap: 18px; margin-bottom: 14px; }
+    footer a { color: #e8efe9; }
+    footer p { max-width: 760px; margin: 8px auto 0; }
+
+    /* ---------- Modal ---------- */
+    .modal {
+      position: fixed; inset: 0; z-index: 50;
+      background: rgba(20, 30, 28, .65);
+      display: none; place-items: center; padding: 16px;
+    }
+    .modal.open { display: grid; }
+    .modal-box {
+      position: relative;
+      background: var(--card); border-radius: 22px;
+      width: min(460px, 100%); padding: 34px 28px 28px;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,.5);
+    }
+    .close {
+      position: absolute; top: 12px; right: 14px;
+      background: none; border: 0; font-size: 28px; line-height: 1; cursor: pointer; color: var(--ink-soft);
+    }
+    .steps { display: flex; gap: 6px; margin-bottom: 18px; }
+    .steps i { flex: 1; height: 6px; border-radius: 4px; background: var(--line); }
+    .steps i.on { background: var(--accent); }
+    .modal-box h3 { font-size: 24px; margin-bottom: 4px; }
+    .modal-box p { color: var(--ink-soft); font-size: 15px; margin-bottom: 18px; }
+    .modal-box label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+    .modal-box input {
+      width: 100%; font: inherit; padding: 13px 14px; margin-bottom: 14px;
+      border: 1.5px solid var(--line); border-radius: 10px; background: #fff;
+    }
+    .modal-box input:focus { outline: none; border-color: var(--brand); }
+    .modal-box .btn { width: 100%; font-size: 18px; }
+    .secure { text-align: center; font-size: 12px; color: var(--ink-soft); margin-top: 12px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 820px) {
+      .grid-3 { grid-template-columns: 1fr; }
+      .bonus, .guarantee, .author { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .bonus .cover { width: 150px; }
+      .guarantee { padding: 32px 22px; }
+      section.block { padding: 60px 0; }
+      .header-link { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">🎧 New: the <strong>21-Day Morning Ritual</strong> program is now available</div>
+
+  <div class="wrap">
+    <header class="site">
+      <a class="logo" href="#"><span class="logo-mark"></span>Aurora Mindset</a>
+      <a class="header-link" href="#faq">Questions?</a>
+    </header>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Watch the short presentation</span>
+      <h1>Ten Minutes Each Morning to Build a <em>Calmer, Clearer</em> Relationship With Money</h1>
+      <p class="lead">A guided audio routine that helps you swap money anxiety for focus, gratitude and confident daily decisions.</p>
+
+      <div class="video">
+        <!-- Paste YOUR OWN video embed here (Panda, Vimeo, YouTube...) and delete the placeholder div:
+             <iframe src="https://YOUR-VIDEO-EMBED-URL" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+        <div class="video-placeholder">
+          <div class="play"></div>
+          <span>Press play to watch</span>
+        </div>
+      </div>
+
+      <div class="offer">
+        <div class="price"><s>$97</s> Today only <b>$37</b></div>
+        <a href="#" class="btn js-open">Start My 21-Day Ritual <small>Instant digital access</small></a>
+        <div class="trust"><span>Secure checkout</span><span>Instant download</span><span>30-day guarantee</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="block alt">
+    <div class="wrap">
+      <h2 class="section-title">How the program works</h2>
+      <p class="section-sub">Simple, repeatable and built to fit into the busiest schedule.</p>
+      <div class="grid-3">
+        <div class="feature">
+          <div class="num">01</div>
+          <h3>Listen</h3>
+          <p>Press play on a new 10-minute guided session each morning — headphones recommended.</p>
+        </div>
+        <div class="feature">
+          <div class="num">02</div>
+          <h3>Reflect</h3>
+          <p>Use the short journaling prompt that follows each session to clarify one money goal for the day.</p>
+        </div>
+        <div class="feature">
+          <div class="num">03</div>
+          <h3>Act</h3>
+          <p>Finish with one small, practical action — the kind of habit that compounds over 21 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BONUSES -->
+  <section class="block">
+    <div class="narrow">
+      <h2 class="section-title">Plus 3 bonuses included free</h2>
+      <p class="section-sub">Everything you need to get the most out of your daily ritual.</p>
+
+      <div class="bonus">
+        <div class="cover c1"><small>Bonus 01</small><strong>Quick-Start Companion</strong><small>Aurora Mindset</small></div>
+        <div>
+          <span class="tag">Bonus #1</span>
+          <h3>The Quick-Start Companion</h3>
+          <p>A short, illustrated walkthrough showing how to set up your space, pick the best time of day and track your progress through all 21 sessions.</p>
+          <div class="value">Valued at $27 — yours free</div>
+        </div>
+      </div>
+
+      <div class="bonus">
+        <div class="cover c2"><small>Bonus 02</small><strong>The Calm Focus Workbook</strong><small>Aurora Mindset</small></div>
+        <div>
+          <span class="tag">Bonus #2</span>
+          <h3>The Calm Focus Workbook</h3>
+          <p>Printable worksheets and breathing exercises to quiet mental noise before the important financial decisions in your week.</p>
+          <div class="value">Valued at $19 — yours free</div>
+        </div>
+      </div>
+
+      <div class="bonus">
+        <div class="cover c3"><small>Bonus 03</small><strong>Daily Gratitude Prompts</strong><small>Aurora Mindset</small></div>
+        <div>
+          <span class="tag">Bonus #3</span>
+          <h3>Daily Gratitude Prompts</h3>
+          <p>A deck of 60 short reflection prompts to read alongside the audio sessions and keep your mindset positive long after day 21.</p>
+          <div class="value">Valued at $17 — yours free</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUARANTEE -->
+  <section class="block alt">
+    <div class="wrap">
+      <div class="guarantee">
+        <div class="seal"><div><b>30</b><span>Day money-back<br>guarantee</span></div></div>
+        <div>
+          <h2>Try it for 30 days, risk-free</h2>
+          <p>Go through the program at your own pace. If you don't feel it was worth it, just email our support team within 30 days and we'll refund every cent — no questions asked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHOR -->
+  <section class="block">
+    <div class="narrow">
+      <div class="author">
+        <div class="avatar">A</div>
+        <div>
+          <h3>A note from the Aurora team</h3>
+          <p>We created this program because we noticed how much stress people carry around money — and how much a few calm, intentional minutes each day can change the way they show up. We hope it brings you the same clarity it brought us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block alt" id="faq">
+    <div class="narrow">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <p class="section-sub">Still unsure? Here are the answers to the most common questions.</p>
+      <details>
+        <summary>How do I receive the program?</summary>
+        <p>Right after checkout you'll get an email with your login. You can stream or download every session on your phone or computer.</p>
+      </details>
+      <details>
+        <summary>How much time does it take per day?</summary>
+        <p>About 10 minutes for the audio and 2–3 minutes for the reflection prompt.</p>
+      </details>
+      <details>
+        <summary>Is this a one-time payment?</summary>
+        <p>Yes. There are no subscriptions or hidden fees — you pay once and keep lifetime access.</p>
+      </details>
+      <details>
+        <summary>What if it isn't for me?</summary>
+        <p>You're covered by our 30-day money-back guarantee. Just email support and we'll process your refund.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="block final">
+    <div class="narrow">
+      <h2>Your calmer mornings start today</h2>
+      <p class="section-sub">Lifetime access to the 21-day program and all 3 bonuses for a single payment.</p>
+      <div class="offer">
+        <div class="price"><s>$97</s> Today only <b>$37</b></div>
+        <a href="#" class="btn js-open">Get Instant Access <small>Includes all 3 bonuses</small></a>
+        <div class="trust"><span>Secure checkout</span><span>Instant download</span><span>30-day guarantee</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#">Privacy Policy</a>
+      <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
+    </nav>
+    <p>© <span id="year"></span> Aurora Mindset. All rights reserved.</p>
+    <p>This product is for personal development and educational purposes only and is not financial, medical or psychological advice. Individual results vary.</p>
+    <p>This site is not part of the Facebook website or Meta Platforms, Inc. and is not endorsed by Facebook in any way.</p>
+  </footer>
+
+  <!-- MODAL (step 1: capture lead → step 2: checkout) -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-labelledby="modal-title">
+      <button class="close" aria-label="Close">&times;</button>
+      <div class="steps"><i class="on"></i><i></i></div>
+      <h3 id="modal-title">Step 1 of 2</h3>
+      <p>Where should we send your access details?</p>
+      <form id="lead-form">
+        <label for="f-name">First name</label>
+        <input id="f-name" name="name" type="text" placeholder="Your first name" required>
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" placeholder="you@email.com" required>
+        <button class="btn" type="submit">Continue to Step 2 →</button>
+      </form>
+      <div class="secure">🔒 Your information is safe and will never be shared.</div>
+    </div>
+  </div>
+
+  <script>
+    // Put your checkout link here
+    var CHECKOUT_URL = "#";
+
+    var modal = document.getElementById("modal");
+    function openModal(e) { e.preventDefault(); modal.classList.add("open"); modal.setAttribute("aria-hidden", "false"); }
+    function closeModal() { modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true"); }
+
+    document.querySelectorAll(".js-open").forEach(function (b) { b.addEventListener("click", openModal); });
+    modal.querySelector(".close").addEventListener("click", closeModal);
+    modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+
+    document.getElementById("lead-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var url = CHECKOUT_URL;
+      if (url !== "#") {
+        url += (url.indexOf("?") === -1 ? "?" : "&") +
+          "name=" + encodeURIComponent(f.name.value) + "&email=" + encodeURIComponent(f.email.value);
+        window.location.href = url;
+      } else {
+        alert("Set CHECKOUT_URL in index.html to your checkout link.");
+      }
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
